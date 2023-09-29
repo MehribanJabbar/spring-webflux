@@ -7,6 +7,8 @@ import com.example.mscards.service.CardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static org.springframework.http.HttpStatus.*;
 
 @RestController
@@ -15,10 +17,15 @@ import static org.springframework.http.HttpStatus.*;
 public class CardController {
     private final CardService cardService;
 
-    @GetMapping("/{id}")
-    @ResponseStatus(OK)
-    public CardResponse getCardById(@PathVariable Long id){
-        return cardService.getCardById(id);
+//    @GetMapping("/{id}/{user-id}")
+//    @ResponseStatus(OK)
+//    public CardResponse getCardById(@PathVariable Long id, @PathVariable("user-id") Long userId){
+//        return cardService.getCardByUserId(id, userId);
+//    }
+
+    @GetMapping("/{user-id}")
+    public List<CardResponse> getCardsByUserId(@PathVariable("user-id") Long userId){
+        return cardService.getAllCardsByUserId(userId);
     }
 
     @PostMapping

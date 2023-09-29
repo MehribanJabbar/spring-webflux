@@ -6,6 +6,7 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class User {
     String name;
     String surname;
     String username;
-    String birthDate;
+    LocalDate birthdate;
     String birthPlace;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;

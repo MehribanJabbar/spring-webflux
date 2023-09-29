@@ -16,13 +16,13 @@ public class ErrorHandle {
     @ResponseStatus(INTERNAL_SERVER_ERROR)
     public ErrorResponse handle(Exception exception){
         log.error("Exception", exception);
-        return new ErrorResponse(ExceptionMessage.UNEXPECTED_ERROR.getCode(), ExceptionMessage.UNEXPECTED_ERROR.getMessage());
+        return new ErrorResponse(ExceptionMessage.UNEXPECTED_ERROR.getMessage());
     }
 
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(NOT_FOUND)
     public ErrorResponse handle(NotFoundException exception){
         log.error("NotFoundException", exception);
-        return new ErrorResponse(ExceptionMessage.CARD_NOT_FOUND.getCode(), ExceptionMessage.CARD_NOT_FOUND.getMessage());
+        return new ErrorResponse(ExceptionMessage.CARD_NOT_FOUND.getMessage());
     }
 }

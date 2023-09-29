@@ -3,6 +3,7 @@ package com.example.msusers.controller;
 import com.example.msusers.model.dto.SaveUserRequest;
 import com.example.msusers.model.dto.UpdateUserRequest;
 import com.example.msusers.model.dto.UserResponse;
+import com.example.msusers.model.reponse.CardResponse;
 import com.example.msusers.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,11 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public Mono<UserResponse> getUserById(@PathVariable Long id){
         return userService.getUserById(id);
+    }
+
+    @GetMapping("/{user-id}")
+    public Mono<CardResponse> getCardsByUserId(@PathVariable("user-id") Long userId){
+        return userService.getAllCardsByUserId(userId);
     }
 
     @GetMapping

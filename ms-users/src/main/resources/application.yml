@@ -1,12 +1,12 @@
 spring:
   r2dbc:
-    url: r2dbc:postgresql://localhost:4242/spring_webflux_db
+    url: r2dbc:postgresql://localhost:5432/users
     username: postgres
     password: a
   jpa:
     open-in-view: false
-#  liquibase:
-#    change-log: classpath:liquibase/changelog-master.yaml
-#    url: jdbc:postgresql://localhost:4242/spring_webflux_db
-#    user: postgres
-#    password: 12345
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+    url: jdbc:postgresql://localhost:4242/users
+    user: postgres
+    password: a
