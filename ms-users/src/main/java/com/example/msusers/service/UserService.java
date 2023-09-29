@@ -1,7 +1,6 @@
 package com.example.msusers.service;
 
 import com.example.msusers.client.CardWebClient;
-import com.example.msusers.controller.UserController;
 import com.example.msusers.dao.repository.UserRepository;
 import com.example.msusers.exception.NotFoundException;
 import com.example.msusers.mapper.UserMapper;
